@@ -4,7 +4,7 @@ A Cloudflare Worker that generates travel itineraries using Grok API and stores 
 
 ## Features
 - Generates travel itineraries for a given destination and duration.
-- Uses Grok API for AI-powered itinerary generation.
+- Uses OPENAI API for AI-powered itinerary generation.
 - Stores results in Cloudflare KV for asynchronous processing.
 - Simple HTML UI for user interaction.
 - Deployed on Cloudflare Workers.
@@ -12,7 +12,7 @@ A Cloudflare Worker that generates travel itineraries using Grok API and stores 
 ## Prerequisites
 - Node.js 18+
 - Cloudflare account
-- Grok API key (from https://x.ai/api)
+- OPENAI API key (from (https://platform.openai.com/api-keys))
 - Filtrshkn (for Iran)
 
 ## Setup
@@ -28,28 +28,28 @@ npm install
 ## Set up environment variables:
 
 Create .dev.vars with:
-envGROK_API_KEY=your-grok-api-key
+envOPENAI_API_KEY=your-openai-api-key
 
 For production:
-bashnpx wrangler secret put GROK_API_KEY
+bashnpx wrangler secret put OPENAI_API_KEY
 
 
 
 ## Create KV Namespace:
-bash
+
 npx wrangler kv:namespace create ITINERARIES
 Update wrangler.toml with the namespace ID.
 
 ## Run locally:
-bash
+
 npx wrangler dev
 
 ## Deploy to Cloudflare:
-bash
+
 npx wrangler deploy
 
 
-Usage
+## Usage
 
 Access UI: Open https://itinerary-generator.mohsenivandad.workers.dev in a browser.
 API:
