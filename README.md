@@ -18,7 +18,7 @@ A Cloudflare Worker that generates travel itineraries using Grok API and stores 
 ## Setup
 1. Clone the repository:
    ```bash
-   git clone <your-repo-url>
+   git clone (https://github.com/VvVBlack/stak-itinerary)
    cd itinerary-generator
    
 ## Install dependencies:
